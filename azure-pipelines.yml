@@ -21,7 +21,13 @@ steps:
     java -version
   env:
     JAVA_HOME: $(JAVA_HOME_8_X64)
-    PATH: $(JAVA_HOME_8_X64)/bin;$(C:\Program Files (x86)\Common Files\Oracle\Java\javapath)
+    PATH: $(JAVA_HOME_8_X64)/bin;$(PATH)
+
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
 
 - task: PublishBuildArtifacts@1
   inputs:
