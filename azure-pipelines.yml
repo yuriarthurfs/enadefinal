@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  name: local 
+  vmImage: ubuntu-latest
 
 steps:
 - task: Maven@3
