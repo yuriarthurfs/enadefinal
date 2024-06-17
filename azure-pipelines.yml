@@ -15,6 +15,13 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean package'
+    
+
+- script: |
+    java -version
+  env:
+    JAVA_HOME: $(JAVA_HOME_8_X64)
+    PATH: $(JAVA_HOME_8_X64)/bin;$(C:\Program Files (x86)\Common Files\Oracle\Java\javapath)
 
 - task: PublishBuildArtifacts@1
   inputs:
